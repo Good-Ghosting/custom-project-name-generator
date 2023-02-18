@@ -3,6 +3,8 @@ declare module '@good-ghosting/random-name-generator' {
     alliterative?: boolean;
     number?: boolean;
     words?: number;
+    adjectives?: string[];
+    nouns?: string[];
   }
 
   type Result = {
