@@ -25,17 +25,19 @@ function generate(options) {
 
 function getRawProjName(options) {
   var raw = [];
+  const usedAdjectives = options?.adjectives || adjectives;
+  const usedNouns = options?.nouns || nouns;
   _.times(options.words - 1, function () {
     if (options.alliterative && raw.length)
-      raw.push(_.sample(getAlliterativeMatches(adjectives, raw[0].substring(0, 1))));
+      raw.push(_.sample(getAlliterativeMatches(usedAdjectives, raw[0].substring(0, 1))));
     else
-      raw.push(_.sample(adjectives).toLowerCase());
+      raw.push(_.sample(usedAdjectives).toLowerCase());
   });
 
   if (options.alliterative)
-    raw.push(_.sample(getAlliterativeMatches(nouns, raw[0].substring(0, 1))));
+    raw.push(_.sample(getAlliterativeMatches(usedNouns, raw[0].substring(0, 1))));
   else
-    raw.push(_.sample(nouns).toLowerCase());
+    raw.push(_.sample(usedNouns).toLowerCase());
 
   if (options.number) {
     raw.push(_.random(1, 9999));

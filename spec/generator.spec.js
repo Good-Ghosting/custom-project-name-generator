@@ -97,6 +97,25 @@ describe('generator', function () {
         expect(_.includes(nouns, projName.raw[1])).to.be(true);
         expect(projName.raw[0].substring(0, 1).toLowerCase() === projName.raw[1].substring(0, 1).toLowerCase()).to.be(true);
       });
+
+      it('with custom adjectives and nouns, has n-1 adjectives and 1 noun', function () {
+        const customAdjectives = ['adjective1', 'adjective2', 'adjective3', 'adjective4', 'adjective5'];
+        const customNouns = ['noun1', 'noun2', 'noun3', 'noun4'];
+        
+        projName = generate({words: 3, adjectives: customAdjectives, nouns: customNouns });
+        expect(projName.raw.length).to.be(3);
+        expect(_.includes(customAdjectives, projName.raw[0])).to.be(true);
+        expect(_.includes(customAdjectives, projName.raw[1])).to.be(true);
+        expect(_.includes(customNouns, projName.raw[2])).to.be(true);
+
+        projName = generate({words: 5, adjectives: customAdjectives, nouns: customNouns});
+        expect(projName.raw.length).to.be(5);
+        expect(_.includes(customAdjectives, projName.raw[0])).to.be(true);
+        expect(_.includes(customAdjectives, projName.raw[1])).to.be(true);
+        expect(_.includes(customAdjectives, projName.raw[2])).to.be(true);
+        expect(_.includes(customAdjectives, projName.raw[3])).to.be(true);
+        expect(_.includes(customNouns, projName.raw[4])).to.be(true);
+      });
     });
   });
 
