@@ -1,15 +1,16 @@
-# Project Name Generator
+# Custom Name Generator
+Extends the original package [project-name-generator](https://github.com/aceakash/project-name-generator) from [Akash Kurdekar](https://github.com/aceakash) by allowing custom adjectives and nouns.
 
 Generate quirky names like *spiffy-waterfall*, *sassy-bread*, *mature-dew-8239* to use wherever you need a random but memorable name.
 
 Useful for object names, temp folders, passwords, project names, unique ids etc
 
 ## Install
-`npm install project-name-generator --save`
+`npm install @good-ghosting/custom-name-generator --save`
 
 ## Quick Start
 ```javascript
-var generate = require('project-name-generator');
+var generate = require('@good-ghosting/custom-name-generator');
 
 generate().dashed; // 'uptight-guitar'
 
@@ -21,40 +22,14 @@ generate({ number: true }).dashed; // 'disgraceful-temper-7794'
 
 generate({ words: 4 }).raw; // ['tiny', 'crabby', 'wired', 'quicksand']
 
+generate({ words: 3, adjectives: ['nice', 'warm', 'wired',], nouns: ['guitar', 'beach'] }).raw; // ['nice', 'wired', 'guitar']
+
 generate({ words: 4, number: true }).dashed; // 'breakable-judicious-luxuriant-tax-3931'
 
 generate({ words: 2, alliterative: true }).spaced; // 'elegant experience'
 
 ```
 
-## Quickstart CLI
-This package contains a cli script.  You can pull in the package globally using npm
-`npm install -g project-name-generator`
-
-Call from your command line
-```
-$ project-name-generator
-{ raw: [ 'spry', 'bath' ],
-  dashed: 'spry-bath',
-  spaced: 'spry bath' }
-```
-
-For CLI options 
-```
-project-name-generator -h
-
-Usage: project-name-generator [options]
-
-
-Options:
-
-  -V, --version          output the version number
-  -w, --words [num]      number of words [2]
-  -n, --numbers          use numbers
-  -a, --alliterative     use alliterative
-  -o, --output [output]  output type [raw|dashed|spaced]
-  -h, --help             output usage information
-```
 
 ## API
 The module returns a single function, `generate(options)`
@@ -105,11 +80,9 @@ The `options` argument object can have properties
 To run tests locally:
 ```
 npm install
+// run yarn install if preferred or have any issues with npm install
 
 npm test
 ```
 
-The library has been tested with Node.js 12.18.4
-
-## Status
-![How up-to-date are dependencies?](https://david-dm.org/aceakash/project-name-generator.svg)
+The library has been tested with Node.js 16.17.1
