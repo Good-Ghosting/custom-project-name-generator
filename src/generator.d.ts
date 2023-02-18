@@ -1,4 +1,4 @@
-declare module 'custom-name-generator' {
+declare module '@good-ghosting/random-name-generator' {
   interface Options {
     alliterative?: boolean;
     number?: boolean;
