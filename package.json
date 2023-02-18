@@ -1,6 +1,6 @@
 {
-  "name": "@Good-Ghosting/custom-project-name-generator",
-  "version": "2.2.1",
+  "name": "@good-ghosting/custom-project-name-generator",
+  "version": "2.2.3",
   "description": "Generate a random, unique, heroku-like name for your app/project/server etc. e.g. \"resonant-silence\". Extends the original package from Akash Kurdekar (git://github.com/aceakash/project-name-generator.git) by allowing custom adjectives and nouns.",
   "types": "src/generator.d.ts",
   "main": "src/generator.js",
@@ -10,9 +10,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Good-Ghosting/project-name-generator"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "heroku",
@@ -29,7 +26,7 @@
   "author": "Akash Kurdekar, Francis Odisi",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^8.1.3",
+    "mocha": "^10.2.0",
     "must": "^0.13.4"
   },
   "dependencies": {

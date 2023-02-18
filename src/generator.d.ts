@@ -1,4 +1,4 @@
-declare module 'project-name-generator' {
+declare module 'custom-project-name-generator' {
   interface Options {
     alliterative?: boolean;
     number?: boolean;
